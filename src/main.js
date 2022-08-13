@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import router from "@/router";
+import store from "@/store";
 
-createApp(App).mount('#app')
+import './index.css'
+import 'flowbite';
+
+createApp(App).use(router)
+    .use(store)
+    .provide('ipc', window.ipc)
+    .mount('#app')
